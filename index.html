@@ -20,6 +20,10 @@
 	<main>
 		<section class="container">
 			<h2>Meus pacientes</h2>
+			<div class="grupo">
+				<h3>Filtre:</h3>
+				<input type="text" id="Filter" placeholder="Digite o nome do paciente">
+			</div>
 			<table>
 				<thead>
 					<tr>
@@ -71,11 +75,35 @@
 					</tr>
 				</tbody>
 			</table>
+			<button id="buscar-paciente" class="bto bto-principal">Buscar paciente</button>
 
+		</section>
+		<section class="container">
+			<h2>Adicionar novo paciente</h2>
+			<form id="form-adiciona">
+				<div>
+					<label for="nome">Nome:</label>
+					<input type="text" name="nome" id="nome" class="campo" placeholder="Digite o nome do paciente">
+				</div>
+				<div class="grupo">
+					<label id="form-adiciona">Peso</label>
+					<input type="text" id="peso" class="campo campo-medio" name="peso" placeholder="Digite o peso do paciente">
+				</div>
+				<div class="grupo">
+					<label id="form-adiciona">Altura</label>
+					<input type="text" name="altura" id="altura" class="campo campo-medio" placeholder="Digite a altura do paciente">
+				</div>
+				<div class="grupo">
+					<label id="form-adiciona">Gordura</label>
+					<input type="text" name="gordura" id="gordura" class="campo campo-medio" placeholder="Digite a gordura do paciente">
+				</div>
+				<button id="adicionar-paciente" class="bto bto-principal">Adicionar</button>
+			</form>
 		</section>
 	</main>
 
 	<script src="js/principal.js"></script>
+	<script src="js/form.js"></script>
 	
 </body>
 
