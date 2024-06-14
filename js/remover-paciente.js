@@ -1,17 +1,14 @@
-var pacientes = document.querySelectorAll("#tabela-pacientes");
+// Selecione todos os botões de exclusão
+var botoesExcluir = document.querySelectorAll('.excluir-paciente');
 
-pacientes.forEach(paciente => {
-    paciente.addEventListener("dblclick", function(event){
-        //this.remove();
-
-        //de forma explicativa ficaria assim:
-        // var alvoEvento = event.target;
-        // var paiDoAlvo = alvoEvento.parentNode;
-        //paiDoAlvo.remove();
-        event.target.parentNode.classList.add("fadeOut");
+// Adicione um evento de clique a cada botão de exclusão
+botoesExcluir.forEach(function(botao) {
+    botao.addEventListener('click', function(event) {
+        // Previna o comportamento padrão do botão
+        event.preventDefault();
         
-        setTimeout(() =>{
-            event.target.parentNode.remove();
-        }, 1000);
-    })
+        // Remova o paciente pai do botão de exclusão clicado
+        var paciente = botao.parentNode.parentNode;
+        paciente.remove();
+    });
 });

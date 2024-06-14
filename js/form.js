@@ -35,10 +35,6 @@ function obtemPacienteDoFormulario(form) {
 }
 
 
-
-
-    
-
 //cria a tr e a td da lista
 function montaTr(paciente) {
     var pacienteTr = document.createElement("tr");
@@ -55,6 +51,56 @@ function montaTr(paciente) {
     pacienteTr.appendChild(alturaTd);
     pacienteTr.appendChild(gorduraTd);
     pacienteTr.appendChild(imcTd);
+
+    //  ------------------------------------------------------------------------------------------------------------------------------------------------------
+        //                                          FORMATO BUTTON 
+
+    // Criando o botão de exclusão
+    // var botaoExcluirTd = pacienteTr.insertCell();
+    // var botaoExcluir = document.createElement("button");
+    // botaoExcluir.setAttribute("type", "button"); // Alterado de "submit" para "button"
+    // botaoExcluir.setAttribute("class", "excluir-paciente");
+    // var iconeLixeira = document.createElement("i");
+    // iconeLixeira.setAttribute("class", "far fa-trash-alt");
+    // botaoExcluir.appendChild(iconeLixeira);
+    // botaoExcluirTd.appendChild(botaoExcluir);
+
+    // Adicionando evento de clique para excluir o paciente
+    // botaoExcluir.addEventListener("click", function() {
+    //     pacienteTr.remove(); // Remove a linha do paciente quando o botão é clicado
+    // });
+
+    // ----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    //                                              FORMATO ANCORA 
+
+
+    // Criando os elementos de âncora para exclusão e edição
+    var anchorExcluir = document.createElement("a");
+    anchorExcluir.setAttribute("href", "#");
+    anchorExcluir.setAttribute("class", "excluir-paciente");
+    var iconeLixeira = document.createElement("i");
+    iconeLixeira.setAttribute("class", "far fa-trash-alt");
+    anchorExcluir.appendChild(iconeLixeira);
+
+    var anchorEditar = document.createElement("a");
+    anchorEditar.setAttribute("href", "#");
+    var iconeEditar = document.createElement("i");
+    iconeEditar.setAttribute("class", "fas fa-marker");
+    anchorEditar.appendChild(iconeEditar);
+
+    // Adicionando âncoras de exclusão e edição à TD de ação
+    var acaoTd = document.createElement("td");
+    acaoTd.appendChild(anchorExcluir);
+    acaoTd.appendChild(anchorEditar);
+    pacienteTr.appendChild(acaoTd);
+
+    // Adicionando evento de clique para exclusão do paciente
+    anchorExcluir.addEventListener("click", function(event) {
+        event.preventDefault();
+        pacienteTr.remove();
+    });
 
     return pacienteTr;
 }
