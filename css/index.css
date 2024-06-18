@@ -141,3 +141,13 @@ button[disabled=disabled], button:disabled {
 	opacity: 0;
 	transition: 1s;
 }
+
+.invisivel{
+	display: none;
+}
+
+#filter {
+	width: 200px;
+	height: 35px;
+	margin-bottom: 10px;
+}
